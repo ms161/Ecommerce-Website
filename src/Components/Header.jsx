@@ -10,7 +10,7 @@ const Header = (props) => {
         <h1>Store</h1>
         <h1>About</h1>
         </div>
-       <div> <Cart data={props.data} ></Cart></div>
+       <div> <Cart data={props.data} getCartItemId={props.getCartItemId} ></Cart></div>
        
     </div>
     <div className='bg-gray-700 h-[8rem]   ani italic text-white text-center text-6xl align-text-center mt-[3rem] ' >The Generics</div>
@@ -20,3 +20,4 @@ const Header = (props) => {
 }
 
 export default Header
+

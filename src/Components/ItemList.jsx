@@ -1,7 +1,15 @@
 import React from "react";
 import "./Footer.css";
 const ItemList = (props) => {
-  console.log(props.props.title);
+  const addToCartHandler=e=>{
+    // console.log(props)
+    props.OnCartData(props.props)
+  }
+  // console.log(props.props.title);
+
+
+
+
   return (
     <>
       <div className="grid-rows-2 ani">
@@ -12,7 +20,7 @@ const ItemList = (props) => {
           </div>
           <div className=" flex justify-between w-[19rem] mt-2">
             <p className=" text-[20px] font-bold">${props.props.price}</p>
-            <button className="bg-sky-500 text-white text-[14px] rounded-sm pr-1 pl-2">
+            <button onClick={addToCartHandler} className="bg-sky-500 text-white text-[14px] rounded-sm pr-1 pl-2">
               Add to Cart
             </button>
           </div>
