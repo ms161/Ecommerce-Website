@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import CarrtItems from "./CarrtItems";
 import AuthContext from "../Store/Auth-Context";
+// import { AuthContext } from "../../App";
 
 const Cart = (props) => {
   //fetching data from context api authcontext

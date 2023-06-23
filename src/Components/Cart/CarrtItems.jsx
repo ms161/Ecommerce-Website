@@ -1,11 +1,20 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../Store/Auth-Context";
+// import { AuthContext } from "../../App";
 
 const CarrtItems = (props) => {
+
   const ctx = useContext(AuthContext);
+  let z=0
+  let totalAmount=ctx.cartItems.map((i)=>{
+     z=i.price*i.quantity +z
+
+  })
+  
+  console.log(ctx,'this is in ctx')
   const [showCart, setShowCart] = useState(false);
 console.log(ctx,'this is in cartitems ctx')
-  console.log(props, "this is in cartitem");
+  // console.log(props, "this is in cartitem");
   //showing cart
   //showing cart
   //showing cart
@@ -18,7 +27,7 @@ console.log(ctx,'this is in cartitems ctx')
   const removeElement = (e) => {
     // e.target.parentElement.parentElement.remove()
     ctx.cartQty = ctx.cartQty - 1;
-    console.log(e.target.value, "its in remove button");
+    // console.log(e.target.value, "its in remove button");
     // ctx.id = e.target.id;
     // ctx.removeItem(e)
     props.getCartItemId(e.target.value);
@@ -65,6 +74,7 @@ console.log(ctx,'this is in cartitems ctx')
                   <div className="">
                     <input
                       defaultValue="1"
+                      value={ele.quantity}
                       className=" border ml-[4rem] border-black h-[2rem] w-[2rem]"
                       type="text"
                     />
@@ -77,12 +87,17 @@ console.log(ctx,'this is in cartitems ctx')
                     >
                       Remove
                     </button>
+                   
                   </div>
                 </div>
               </>
             </div>
           ))}
+          <div className="flex justify-evenly font-bold font-serif">
+            <div className="text-black font-serif font-bold">Total Amount</div>
+ <div className="text-black">${z}</div>
 
+          </div>
           <button className="text-white p-[0.5rem] animate-bounce rounded-md font-mono ml-[9rem] bg-green-500  text-[40px] mt-[2rem]">
             Purchase
           </button>
