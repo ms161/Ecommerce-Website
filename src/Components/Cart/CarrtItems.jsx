@@ -3,17 +3,18 @@ import AuthContext from "../Store/Auth-Context";
 // import { AuthContext } from "../../App";
 
 const CarrtItems = (props) => {
-
+  const [btn,setBtn]=useState(true)
+ 
   const ctx = useContext(AuthContext);
-  let z=0
-  let totalAmount=ctx.cartItems.map((i)=>{
-     z=i.price*i.quantity +z
-
-  })
   
-  console.log(ctx,'this is in ctx')
+  let z = 0;
+  let totalAmount = ctx.cartItems.map((i) => {
+    return (z = i.price * i.quantity + z);
+  });
+  console.log(totalAmount);
+  console.log(ctx, "this is in ctx");
   const [showCart, setShowCart] = useState(false);
-console.log(ctx,'this is in cartitems ctx')
+  console.log(ctx, "this is in cartitems ctx");
   // console.log(props, "this is in cartitem");
   //showing cart
   //showing cart
@@ -25,12 +26,10 @@ console.log(ctx,'this is in cartitems ctx')
   //removing element
   //removing element
   const removeElement = (e) => {
-    // e.target.parentElement.parentElement.remove()
     ctx.cartQty = ctx.cartQty - 1;
-    // console.log(e.target.value, "its in remove button");
-    // ctx.id = e.target.id;
-    // ctx.removeItem(e)
-    props.getCartItemId(e.target.value);
+
+    ctx.getCartItemId(e.target.value);
+    // props.getCartItemId(e.target.value);
   };
   return (
     <>
@@ -75,7 +74,7 @@ console.log(ctx,'this is in cartitems ctx')
                     <input
                       defaultValue="1"
                       value={ele.quantity}
-                      className=" border ml-[4rem] border-black h-[2rem] w-[2rem]"
+                      className=" border ml-[4rem] bg-white border-black h-[2rem] w-[2rem]"
                       type="text"
                     />
                   </div>
@@ -85,9 +84,8 @@ console.log(ctx,'this is in cartitems ctx')
                       onClick={removeElement}
                       className="bg-red-500 p-[0.5rem] rounded-md text-white"
                     >
-                      Remove
+                      {ele.quantity>1?'Decrease Quantity':'Remove'}
                     </button>
-                   
                   </div>
                 </div>
               </>
@@ -95,8 +93,7 @@ console.log(ctx,'this is in cartitems ctx')
           ))}
           <div className="flex justify-evenly font-bold font-serif">
             <div className="text-black font-serif font-bold">Total Amount</div>
- <div className="text-black">${z}</div>
-
+            <div className="text-black">${z}</div>
           </div>
           <button className="text-white p-[0.5rem] animate-bounce rounded-md font-mono ml-[9rem] bg-green-500  text-[40px] mt-[2rem]">
             Purchase

@@ -23,44 +23,45 @@ const HomePage = () => {
       </div>
       <div className="border-b border-black pt-3 pb-3 flex m-auto w-[70rem]  justify-between">
         <p className=" font-serif font-thin ">JUL16</p>
-        <p>DETROIT, MI</p>
-        <p>DTE ENERGY MUSIC THEATRE</p>
+        <p className=" font-serif font-thin text-gray-500">DETROIT, MI</p>
+        <p className=" font-serif font-thin text-gray-500">DTE ENERGY MUSIC THEATRE</p>
         <button className="text-white bg-sky-500 p-[0.5rem] pl-[2rem] pr-[2rem] rounded-md">
           Buy tickets
         </button>
       </div>
       <div className="border-b border-black pt-3 pb-3 flex m-auto w-[70rem]  justify-between">
-        <p>JUL16</p>
-        <p>DETROIT, MI</p>
-        <p>DTE ENERGY MUSIC THEATRE</p>
+        <p className=" font-serif font-thin ">JUL16</p>
+        <p className=" font-serif font-thin text-gray-500">DETROIT, MI</p>
+        <p className=" font-serif font-thin text-gray-500">DTE ENERGY MUSIC THEATRE</p>
         <button className="text-white bg-sky-500 p-[0.5rem] pl-[2rem] pr-[2rem] rounded-md">
           Buy tickets
         </button>
       </div>
       <div className="border-b border-black pt-3 pb-3 flex m-auto w-[70rem]  justify-between">
-        <p>JUL16</p>
-        <p>DETROIT, MI</p>
-        <p>DTE ENERGY MUSIC THEATRE</p>
+        <p className=" font-serif font-thin ">JUL16</p>
+        <p className=" font-serif font-thin text-gray-500">DETROIT, MI</p>
+        <p className=" font-serif font-thin text-gray-500">DTE ENERGY MUSIC THEATRE</p>
         <button className="text-white bg-sky-500 p-[0.5rem] pl-[2rem] pr-[2rem] rounded-md">
           Buy tickets
         </button>
       </div>
       <div className="border-b border-black pt-3 pb-3 flex m-auto w-[70rem]  justify-between">
-        <p>JUL16</p>
-        <p>DETROIT, MI</p>
-        <p>DTE ENERGY MUSIC THEATRE</p>
-        <button className="text-white bg-sky-500 p-[0.5rem] pl-[2rem] pr-[2rem]  rounded-md">
+        <p className=" font-serif font-thin ">JUL16</p>
+        <p className=" font-serif font-thin text-gray-500">DETROIT, MI</p>
+        <p className=" font-serif font-thin text-gray-500">DTE ENERGY MUSIC THEATRE</p>
+        <button className="text-white bg-sky-500 p-[0.5rem] pl-[2rem] pr-[2rem] rounded-md">
           Buy tickets
         </button>
       </div>
       <div className="border-b border-black pt-3 pb-3 flex m-auto w-[70rem]  justify-between">
-        <p>JUL16</p>
-        <p>DETROIT, MI</p>
-        <p>DTE ENERGY MUSIC THEATRE</p>
-        <button className="text-white bg-sky-500 p-[0.5rem] pl-[2rem] pr-[2rem]  rounded-md">
+        <p className=" font-serif font-thin ">JUL16</p>
+        <p className=" font-serif font-thin text-gray-500">DETROIT, MI</p>
+        <p className=" font-serif font-thin text-gray-500">DTE ENERGY MUSIC THEATRE</p>
+        <button className=" text-white animate-pulse bg-sky-500 p-[0.5rem] pl-[2rem] pr-[2rem] rounded-md">
           Buy tickets
         </button>
       </div>
+
       <FooterComponent></FooterComponent>
     </>
   );

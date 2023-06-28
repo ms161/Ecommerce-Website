@@ -1,10 +1,14 @@
 import React from "react"
 const AuthContext=React.createContext({
     cartItems:[],
-    id:''
-     
+    id:'',
+    onCartData:()=>{},
+    userInfo:[]
+   
 
     
 })
 
 export default AuthContext
+
+

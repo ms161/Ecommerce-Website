@@ -1,10 +1,17 @@
 // <<<<<<< HEAD
-import React from "react";
+// import React, { useContext } from "react";
+import { useContext } from "react";
 import "./Footer.css";
+import AuthContext from "./Store/Auth-Context";
+
 const ItemList = (props) => {
+  const ctx=useContext(AuthContext)
   const addToCartHandler=e=>{
+    ctx.onCartData(props.props)
+  
     // console.log(props)
-    props.OnCartData(props.props)
+    // props.onCartData(props.props)
+ 
   }
   // console.log(props.props.title);
 
