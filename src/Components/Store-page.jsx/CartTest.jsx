@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import ItemList from "../ItemList";
 import Footer from "../Footer";
 import Header from "../Header";
-import CartProvider from "./CartProvider";
 import AuthContext from "../Store/Auth-Context";
+
 
 const productsArr = [
   {
@@ -46,6 +46,7 @@ const productsArr = [
 const CartTest = () => {
     const ctx=useContext(AuthContext)
     console.log(ctx.cartItems)
+    
   return (
   
     <div>
@@ -57,7 +58,10 @@ const CartTest = () => {
       </div>
       <div className=" m-auto w-1/2  grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
         {productsArr.map((ele) => (
-          <ItemList key={ele.id} props={ele}></ItemList>
+        
+          
+          <ItemList key={ele.id}  props={ele}></ItemList>
+         
         ))}
       </div>
 

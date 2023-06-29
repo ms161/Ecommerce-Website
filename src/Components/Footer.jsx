@@ -2,7 +2,7 @@
 
 import React from "react";
 import './Footer.css'
-import FooterComponent from "./Cart/FooterComponent";
+import FooterComponent from "./FooterComponent/FooterComponent";
 const Footer = () => {
   return (
     <>

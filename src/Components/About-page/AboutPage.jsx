@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderComp from '../Store/HeaderComp'
-import FooterComponent from '../Cart/FooterComponent'
+import FooterComponent from '../FooterComponent/FooterComponent'
 
 const AboutPage = () => {
   return (

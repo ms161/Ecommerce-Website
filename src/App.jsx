@@ -1,4 +1,3 @@
-import StorePage from "./Components/Store-page.jsx/StorePage";
 import CartTest from "./Components/Store-page.jsx/CartTest";
 import {
   Route,
@@ -12,6 +11,7 @@ import HomePage from "./Components/Home-page/HomePage";
 import AuthContext from "./Components/Store/Auth-Context";
 import { CartProvider } from "./Components/Store-page.jsx/CartProvider";
 import UserInfo from "./Components/ContactUs/UserInfo";
+import ProductDetails from "./Components/ProductDetails/ProductDetails";
 // const router = createBrowserRouter([
 //   { path: "/", element: <StorePage></StorePage> },
 //   { path: "/about", element: <AboutPage></AboutPage> },
@@ -32,14 +32,14 @@ import UserInfo from "./Components/ContactUs/UserInfo";
 const App = () => {
   // return <RouterProvider router={router}></RouterProvider>;
   return (
+    <Routes>
+      <Route path="/about" element={<AboutPage />} />
+      <Route path="/store" element={<CartTest />} />
+      <Route path="/Contact-Us" element={<UserInfo />} />
+      <Route path="/products/:productId" element={<ProductDetails />} />
 
-      <Routes>
-        <Route path="/about" element={<AboutPage/>} />
-        <Route path="/store" element={<CartTest/>} />
-        <Route path="/Contact-Us" element={<UserInfo/>} />
-        <Route index element={<HomePage/>} />
-      </Routes>
-   
+      <Route index element={<HomePage />} />
+    </Routes>
   );
 };
 

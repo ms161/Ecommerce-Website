@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import HeaderComp from "../Store/HeaderComp";
-import FooterComponent from "../Cart/FooterComponent";
+import FooterComponent from "../FooterComponent/FooterComponent";
 import AuthContext from "../Store/Auth-Context";
 
 const UserInfo = () => {
@@ -52,6 +52,7 @@ setPhone(e.target.value)
               Name
             </label>
             <input
+            required
             onChange={nameHandler}
               className="bg-white border h-[4rem] rounded-md  border-black"
               type="text"
@@ -63,6 +64,7 @@ setPhone(e.target.value)
               Email
             </label>
             <input
+            required
             onChange={emailHandler}
               className="bg-white border h-[4rem] rounded-md  border-black"
               type="text"
@@ -74,6 +76,7 @@ setPhone(e.target.value)
               Phone Number
             </label>
             <input
+            required
             onChange={phoneHandler}
               className="bg-white border h-[4rem] rounded-md  border-black"
               type="text"

@@ -70,7 +70,7 @@ const removeCartItem = (cartId) => {
  
   useEffect(()=>{
     addUserToFirebase()
-  },[singleData])
+  })
   async function addUserToFirebase(){
     const response = await fetch('https://ecommercewebsite-82961-default-rtdb.firebaseio.com/ecommercewebsite.json',
     {
