@@ -16,6 +16,9 @@ const HeaderComp = () => {
         <Link to={"/about"}> About</Link>
       </div>
       <div>
+        <Link to={'/login'}>Login</Link>
+      </div>
+      <div>
         <Link to={"/Contact-Us"}> Contact Us</Link>
       </div>
     </div>
