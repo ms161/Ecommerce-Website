@@ -34,9 +34,12 @@ export const AuthenticationProvidor = (props) => {
     logOut: logoutHandler,
   };
   return (
+    <>
     <Authentication.Provider value={value}>
       {props.children}
     </Authentication.Provider>
+    
+    </>
   );
 };
 
