@@ -3,6 +3,7 @@ import ItemList from "../ItemList";
 import Footer from "../Footer";
 import Header from "../Header";
 import AuthContext from "../Store/Auth-Context";
+import Authentication from "../LoginPage/AuthenticationProvider";
 
 
 const productsArr = [
@@ -45,6 +46,8 @@ const productsArr = [
 
 const CartTest = () => {
     const ctx=useContext(AuthContext)
+    const ctx2=useContext(Authentication)
+    console.log(ctx2,'it should work')
     console.log(ctx.cartItems)
     
   return (

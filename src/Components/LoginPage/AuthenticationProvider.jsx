@@ -11,6 +11,7 @@ export const AuthenticationProvidor = (props) => {
   const initialToken = localStorage.getItem("token");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState(initialToken);
+  const [email,setEmail]=useState('')
 
   useEffect(()=>{
       setIsLoggedIn(!!token)
@@ -27,11 +28,16 @@ export const AuthenticationProvidor = (props) => {
     setIsLoggedIn(false);
     localStorage.removeItem("token");
   };
+  const emailHandler=(email)=>{
+setEmail(email)
+  }
 
   const value = {
     isLoggedIn: isLoggedIn,
     logIn: loginHandler,
     logOut: logoutHandler,
+    userEmail:emailHandler,
+    email:email,
   };
   return (
     <>

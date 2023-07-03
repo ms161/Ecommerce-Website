@@ -47,6 +47,8 @@ const Login = () => {
     //   console.log(data.error.message, "this is data");
       console.log(res);
       if (res.ok) {
+        console.log(data.email,'this is data we need')
+       ctx.userEmail(data.email)
         ctx.logIn(data.idToken)
         setIsLoading(false);
         console.log('login succesfull')

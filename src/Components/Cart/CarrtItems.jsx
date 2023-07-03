@@ -1,10 +1,59 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../Store/Auth-Context";
+import Authentication from "../LoginPage/AuthenticationProvider";
 // import { AuthContext } from "../../App";
 
 const CarrtItems = (props) => {
+  const ctxEmail=useContext(Authentication)
+  const [cartData,setCartData]=useState([])
+  const [fData,setFData]=useState([])
+  const [qty,setQty]=useState(0)
+  const sanitizedEmail = ctxEmail.email.replace(/[@.]/g, "");
+
   const [btn,setBtn]=useState(true)
- 
+  useEffect(()=>{
+    // getCrudData()
+    
+  },[])
+//  async function getCrudData(){
+//   const res= await fetch(`https://crudcrud.com/api/6a2025d7ca6d4810bcc9794630f1fa15/${sanitizedEmail}`)
+//   const data=await res.json() 
+//   setCartData(data)
+//   console.log(data,'its in cartItems......................')
+//   // data.forEach(element => {
+//   //   console.log(element.singleData.title,'its in cartItems...................')
+//   // });
+//  }
+
+async function firebaseData(){
+  const res=await fetch(`https://newecommerce-aa761-default-rtdb.firebaseio.com/${sanitizedEmail}.json`)
+  const data=await res.json()
+  console.log(data,'this is cart data form firebase')
+//   data.map((ele)=>{
+// console.log(ele,'this is data from firebase')
+//   })
+
+let loadedMovies=[]
+for(let key in data){
+console.log(data[key].data,'why we are getting error here')
+console.log(data[key].data.title,'why we are getting error here')
+  loadedMovies.push({
+    title:data[key].data.title,
+    price:data[key].data.price,
+    imageUrl:data[key].data.imageUrl
+  }
+     
+  )
+  console.log(key)
+  console.log(data[key] ,'this is cart data form firebase')
+}
+setFData(loadedMovies)
+setQty(loadedMovies.length)
+console.log(loadedMovies)
+
+
+}
+
   const ctx = useContext(AuthContext);
   
   let z = 0;
@@ -21,12 +70,16 @@ const CarrtItems = (props) => {
   //showing cart
   const showCartHandler = (e) => {
     setShowCart(!showCart);
+    firebaseData()
+    // getCrudData()
+
   };
   //removing element
   //removing element
   //removing element
   const removeElement = (e) => {
     ctx.cartQty = ctx.cartQty - 1;
+    // e.target.parentElement.parentElement.remove()
 
     ctx.getCartItemId(e.target.value);
     // props.getCartItemId(e.target.value);
